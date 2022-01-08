@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>   
+    <link rel="stylesheet" href="style.css">
+   
+
+</head>
+<body>
+    <header>
+        <a href="#home" class='logo'>Portfolio</a>
+        <div class="toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+        <ul class="menu">
+            <li><a href="#home" onclick="toggleMenu()">Home</a></li>
+            <li><a href="#about" onclick="toggleMenu()">About Me</a></li>
+            <li><a href="#work" onclick="toggleMenu()">My Work</a></li>
+            <li><a href="#contact" onclick="toggleMenu()">Testimonials</a></li>
+        </ul>
+    </header>
+    <section class="banner" id="home">
+        <div class="textBx">
+            <h2>Hello, I am<br> <span>Aslam Khalil</span></h2>
+            <h3>I build and fix web applications.</h3>
+            <a href="#about" class="btn">About Me</a>
+        </div>
+        <div >
+            <img class="face-img" src="./shareb.jpeg" alt="myface">
+        </div>
+    </section>
+    <section class="about" id="about">
+        <div class="heading">
+            <h2>About Me</h2>
+        </div>
+        <div class="content">
+            <div class="contentBx w50">
+                <h3>"Go big or Go home"</h3>
+                <p>I am a stubborn determined developer who is strangely addicted to making code work!!!<br>
+                    I resolve code problems, create smart user interface, imagine useful interaction and develop web experiences.<br>
+                    When not coding I dream about buying a plot of land by a lake.<br>
+                    I also enjoy the outdoors, listen to podcasts and party.<br>
+                    I am a fast paced learner in constant battle to grow and achieve my greatest potential<br>
+                </p>
+            </div>
+            <div class="w50">
+                <img src="work.jpeg" alt="different" class="different-img">
+
+            </div>
+        </div>
+    </section>
+    <section class="work" id="work">
+        <div class="heading">
+            <h2>Some things I've built</h2>
+            <p> These are some of the projects I have worked on using Javascript and React.</p>
+        </div>
+        <div class="content">
+            <div class="workBx" onclick="goToDo()">
+                <div class="imgBx">
+                    <img src="./to-do.png"  alt="myface">
+                </div>
+                <div class="details">
+                    <div class="content">
+                        <h4>My To-Do App</h4>
+                        <p>This is a simple app that lets you add/delete/check a list of tasks</p>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="workBx" onclick="goToSlack()">
+                <div class="imgBx">
+                    <img src="./validation.png"  alt="myface">
+                </div>
+                <div class="details">
+                    <div class="content">
+                        <h4>Slack Clone</h4>
+                        <p>This a live Realtime clone of the slack app which I built using React and Firebase </p>
+                    </div> 
+                </div>             
+            </div>
+            <div class="workBx" onclick="goToAmazon()">
+                <div class="imgBx">
+                    <img src="./my-app.png"  alt="myface">
+                </div>
+                <div class="details">
+                    <div class="content">
+                        <h4>Amazon Clone</h4>
+                          <p>This is a Full-Stack clone of the E-Commerce website Amazon, using React, Stripe for payment processing and firebase for storage</p>
+                    </div>    
+                </div>
+            </div>
+            <div class="workBx" onclick="goToCrypto()">
+                <div class="imgBx">
+                    <img src="./crypto.png"  alt="myface">
+                </div>
+                <div class="details">
+                    <div class="content">
+                        <h4>Crypto Currency Tracker</h4>
+                        <p>This project uses React, React Hooks and Axios to fetch crypto currency data from an API</p>
+                    </div>    
+                </div>
+            </div>
+        </div>
+        <div class="heading">
+            <a href="https://github.com/Azi-khalil" class="btn">View My GitHub</a>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="heading">
+            <h2>Testimonials</h2>
+        </div>
+        <div class="testContent">
+            <div class="bxImg">
+                <img src="./jonny.png" onclick="goToJonny()">              
+            </div>
+            <div class="bxImg" onclick="goToVero()">
+               <img src="./vero.png" >
+            </div>
+        </div>
+    </section>    
+
+
+
+
+
+    <script type="text/javascript" >
+    window.addEventListener('scroll', function(){
+      var header = document.querySelector('header');
+      header.classList.toggle('sticky', window.scrollY > 0);
+    })
+    function toggleMenu() {
+        var menu = document.querySelector('.fa-bars');
+        var btn = document.querySelector('.menu')
+        menu.classList.toggle('fa-times-circle') 
+        btn.classList.toggle('active')
+    }
+    function goToSlack() {
+        window.location.href = "https://slack-95.web.app/";
+    }
+    function goToDo() {
+        window.location.href = "https://todo-app-1cc02.web.app/";
+    }
+    function goToCrypto() {
+        window.location.href = "https://crypto-tracker-1b2b4.web.app/";
+    }
+    function goToAmazon() {
+        window.location.href = "https://anteeqa-e8c7d.web.app/";
+    }
+    function goToVero() {
+        window.location.href = "https://www.linkedin.com/in/veronikaparakova/";
+    }
+    function goToJonny() {
+        window.location.href = "https://www.linkedin.com/in/johannesvanwijk/";
+    }
+    </script>
+    
+</body>
+</html>
