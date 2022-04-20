@@ -74,6 +74,7 @@ header {
   align-items: center;
   transition: 0.5s;
 }
+
 header.sticky {
   background-color: #fff;
   padding: 20px 100px;
@@ -100,6 +101,7 @@ header ul {
   position: relative;
   display: flex;
 }
+
 header ul li {
   position: relative;
   list-style: none;
@@ -128,10 +130,12 @@ header.sticky ul li a {
   font-weight: 600;
   font-size: 30px;
 }
+
 .content {
   display: flex;
   justify-content: space-between;
 }
+
 .contentBx {
   padding: 30px;
 }
@@ -140,6 +144,7 @@ header.sticky ul li a {
   font-size: 24px;
   margin-bottom: 10px;
 }
+
 .w50 {
   min-width: 50%;
   padding: 30px;
@@ -163,23 +168,21 @@ header.sticky ul li a {
 }
 
 .work .content .workBx {
-  position: relative;
   height: 250px;
   width: 320px;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.work .content .workBx .imgBx {
-  width: 100%;
-  height: 100%;
-}
-
-.work .content .workBx .imgBx img {
-  width: 100%;
-  height: 100%;
+.work .content .workBx img {
+  height: 250px;
+  width: 320px;
+  object-fit: cover;
   border-radius: 2%;
+  position: absolute;
   transition: transform 2s;
-  object-fit: fill;
 }
 
 .work .content .workBx:hover img {
@@ -187,42 +190,30 @@ header.sticky ul li a {
 }
 
 .work .content .workBx .details {
-  position: absolute;
-  top: 35px;
-  left: 30px;
-  bottom: 35px;
-  right: 40px;
-  background-color: rgba(0, 0, 0, 0.8);
-  border-radius: 2%;
   transform: scaleY(0);
   transition: transform 0.5s;
 }
+
 .work .content .workBx:hover .details {
   transform: scaleY(1);
 }
 
 .work .content .workBx .details .content {
-  position: absolute;
   text-align: center;
-  justify-content: center;
-  top: 50%;
-  transform: translateY(-50%);
   padding: 15px;
   color: #fff;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 2%;
 }
-.work .content .workBx .details .content h2 {
-  margin: 0;
-  padding: 0;
-}
+
 .work .content .workBx .details .content p {
-  margin: 10px 0 0;
-  padding: 0;
-  font-size: 10px;
+  font-size: 15px;
 }
 
 .contact {
   background-color: #111;
 }
+
 .contact .heading {
   color: #fff;
 }
@@ -232,11 +223,13 @@ header.sticky ul li a {
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
+
 .contact .testContent .bxImg {
   position: relative;
   width: 300px;
   cursor: pointer;
 }
+
 .contact .testContent .bxImg img {
   max-width: 100%;
   max-height: 100%;
@@ -244,6 +237,7 @@ header.sticky ul li a {
   transition: transform 2s;
   margin: 20px;
 }
+
 .contact .testContent .bxImg:hover img {
   transform: scale(1.1);
 }
@@ -251,10 +245,12 @@ header.sticky ul li a {
 /*Responsive*/
 
 @media (max-width: 900px) {
+
   header,
   header.sticky {
     padding: 20px 50px;
   }
+
   .menu {
     position: fixed;
     top: 75px;
@@ -273,52 +269,66 @@ header.sticky ul li a {
   .menu.active {
     left: 0;
   }
+
   header ul li a {
     color: #111;
     font-size: 24px;
     margin: 10px;
   }
+
   .toggle {
     display: block;
     cursor: pointer;
     color: #fff;
   }
+
   header.sticky .toggle {
     color: #111;
   }
+
   section {
     padding: 100px 50px;
   }
+
   .banner {
     padding: 150px 50px 100px;
   }
+
   .banner h2 {
     font-size: 1.5em;
   }
+
   .banner h3 {
     font-size: 1em;
   }
+
   .btn {
     margin-top: 10px;
     padding: 10px 20px;
     font-size: 16px;
   }
+
   .heading h2 {
     font-weight: 600;
     font-size: 24px;
   }
+
   .face-img {
     max-width: 250px;
   }
+
   .heading h2 {
     font-size: 24px;
   }
+
   .contentBx h3 {
     font-size: 20px;
   }
+
   .content {
     flex-direction: column;
   }
+
   .w50 {
     margin-bottom: 20px;
   }
@@ -331,17 +341,51 @@ header.sticky ul li a {
 }
 
 @media (max-width: 600px) {
+
   header,
   header.sticky {
     padding: 20px 20px;
   }
+
   .banner {
     padding: 150px 20px 100px;
   }
+
   section {
     padding: 100px 20px;
   }
+
   .face-img {
     max-width: 200px;
+  }
+}
+
+@media (max-width: 400px) {
+  .banner {
+    flex-direction: column-reverse;
+    justify-content: space-around;
+  }
+
+  .textBx {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  header {
+    padding: 20px 15px;
+  }
+
+  header .logo {
+    font-size: 15px;
+  }
+
+  .contentBx p,
+  h3 {
+    text-align: center;
+  }
+
+  .contact .testContent {
+    display: block;
   }
 }

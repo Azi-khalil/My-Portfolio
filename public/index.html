@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>   
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="style.css">
-   
+
 
 </head>
+
 <body>
     <header>
         <a href="#home" class='logo'>Portfolio</a>
@@ -26,7 +29,7 @@
             <h3>I build and fix web applications.</h3>
             <a href="#about" class="btn">About Me</a>
         </div>
-        <div >
+        <div>
             <img class="face-img" src="./shareb.jpeg" alt="myface">
         </div>
     </section>
@@ -38,7 +41,8 @@
             <div class="contentBx w50">
                 <h3>"Go big or Go home"</h3>
                 <p>I am a stubborn determined developer who is strangely addicted to making code work!!!<br>
-                    I resolve code problems, create smart user interface, imagine useful interaction and develop web experiences.<br>
+                    I resolve code problems, create smart user interface, imagine useful interaction and develop web
+                    experiences.<br>
                     When not coding I dream about buying a plot of land by a lake.<br>
                     I also enjoy the outdoors, listen to podcasts and party.<br>
                     I am a fast paced learner in constant battle to grow and achieve my greatest potential<br>
@@ -57,59 +61,51 @@
         </div>
         <div class="content">
             <div class="workBx" onclick="goToDo()">
-                <div class="imgBx">
-                    <img src="./to-do.png"  alt="myface">
-                </div>
+                <img src="./to-do.png" alt="myface">
                 <div class="details">
                     <div class="content">
                         <h4>My To-Do App</h4>
                         <p>This is a simple app that lets you add/delete/check a list of tasks</p>
                     </div>
-                    
+
                 </div>
             </div>
             <div class="workBx" onclick="goToSlack()">
-                <div class="imgBx">
-                    <img src="./validation.png"  alt="myface">
-                </div>
+                <img src="./validation.png" alt="myface">
                 <div class="details">
                     <div class="content">
                         <h4>Slack Clone</h4>
                         <p>This a live Realtime clone of the slack app which I built using React and Firebase </p>
-                    </div> 
-                </div>             
+                    </div>
+                </div>
             </div>
             <div class="workBx" onclick="goToAmazon()">
-                <div class="imgBx">
-                    <img src="./my-app.png"  alt="myface">
-                </div>
+                <img src="./my-app.png" alt="myface">
                 <div class="details">
                     <div class="content">
                         <h4>Amazon Clone</h4>
-                          <p>This is a Full-Stack clone of the E-Commerce website Amazon, using React, Stripe for payment processing and firebase for storage</p>
-                    </div>    
+                        <p>This is a Full-Stack clone of the E-Commerce website Amazon, using React, Stripe for payment
+                            processing and firebase for storage</p>
+                    </div>
                 </div>
             </div>
             <div class="workBx" onclick="goToCrypto()">
-                <div class="imgBx">
-                    <img src="./crypto.png"  alt="myface">
-                </div>
+                <img src="./crypto.png" alt="myface">
                 <div class="details">
                     <div class="content">
                         <h4>Crypto Currency Tracker</h4>
                         <p>This project uses React, React Hooks and Axios to fetch crypto currency data from an API</p>
-                    </div>    
+                    </div>
                 </div>
             </div>
             <div class="workBx" onclick="goToMovies()">
-                <div class="imgBx">
-                    <img src="./movies.png"  alt="myface">
-                </div>
+                <img src="./movies.png" alt="myface">
                 <div class="details">
                     <div class="content">
                         <h4>Movie Search Engine</h4>
-                        <p>This was a test project for a job application, it was done using React and the data was fetched from MovieDB.</p>
-                    </div>    
+                        <p>This was a test project for a job application, it was done using React and the data was
+                            fetched from MovieDB.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -124,51 +120,52 @@
         </div>
         <div class="testContent">
             <div class="bxImg">
-                <img src="./jonny.png" onclick="goToJonny()">              
+                <img src="./jonny.png" onclick="goToJonny()">
             </div>
             <div class="bxImg" onclick="goToVero()">
-               <img src="./vero.png" >
+                <img src="./vero.png">
             </div>
         </div>
-    </section>    
+    </section>
 
 
 
 
 
-    <script type="text/javascript" >
-    window.addEventListener('scroll', function(){
-      var header = document.querySelector('header');
-      header.classList.toggle('sticky', window.scrollY > 0);
-    })
-    function toggleMenu() {
-        var menu = document.querySelector('.fa-bars');
-        var btn = document.querySelector('.menu')
-        menu.classList.toggle('fa-times-circle') 
-        btn.classList.toggle('active')
-    }
-    function goToSlack() {
-        window.location.href = "https://slack-95.web.app/";
-    }
-    function goToDo() {
-        window.location.href = "https://todo-app-1cc02.web.app/";
-    }
-    function goToCrypto() {
-        window.location.href = "https://crypto-tracker-1b2b4.web.app/";
-    }
-    function goToAmazon() {
-        window.location.href = "https://anteeqa-e8c7d.web.app/";
-    }
-    function goToVero() {
-        window.location.href = "https://www.linkedin.com/in/veronikaparakova/";
-    }
-    function goToJonny() {
-        window.location.href = "https://www.linkedin.com/in/johannesvanwijk/";
-    }
-    function goToMovies() {
-        window.location.href = "https://movie-search-engine-fa560.web.app/discover";
-    }
+    <script type="text/javascript">
+        window.addEventListener('scroll',function() {
+            var header = document.querySelector('header');
+            header.classList.toggle('sticky',window.scrollY > 0);
+        })
+        function toggleMenu() {
+            var menu = document.querySelector('.fa-bars');
+            var btn = document.querySelector('.menu')
+            menu.classList.toggle('fa-times-circle')
+            btn.classList.toggle('active')
+        }
+        function goToSlack() {
+            window.location.href = "https://slack-95.web.app/";
+        }
+        function goToDo() {
+            window.location.href = "https://todo-app-1cc02.web.app/";
+        }
+        function goToCrypto() {
+            window.location.href = "https://crypto-tracker-1b2b4.web.app/";
+        }
+        function goToAmazon() {
+            window.location.href = "https://anteeqa-e8c7d.web.app/";
+        }
+        function goToVero() {
+            window.location.href = "https://www.linkedin.com/in/veronikaparakova/";
+        }
+        function goToJonny() {
+            window.location.href = "https://www.linkedin.com/in/johannesvanwijk/";
+        }
+        function goToMovies() {
+            window.location.href = "https://movie-search-engine-fa560.web.app/discover";
+        }
     </script>
-    
+
 </body>
+
 </html>
