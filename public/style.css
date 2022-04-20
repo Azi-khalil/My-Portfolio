@@ -388,4 +388,12 @@ header.sticky ul li a {
   .contact .testContent {
     display: block;
   }
+
+  .contact .testContent .bxImg {
+    width: auto;
+  }
+
+  .contact .testContent .bxImg img {
+    margin: 0px;
+  }
 }
