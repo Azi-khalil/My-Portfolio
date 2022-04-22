@@ -21,6 +21,7 @@
             <li><a href="#about" onclick="toggleMenu()">About Me</a></li>
             <li><a href="#work" onclick="toggleMenu()">My Work</a></li>
             <li><a href="#contact" onclick="toggleMenu()">Testimonials</a></li>
+            <li><a href="#contactme" onclick="toggleMenu()">Contact me</a></li>
         </ul>
     </header>
     <section class="banner" id="home">
@@ -34,11 +35,12 @@
         </div>
     </section>
     <section class="about" id="about">
+        <!-- <img src="./lake.jpeg" class="lake"> -->
         <div class="heading">
             <h2>About Me</h2>
         </div>
         <div class="content">
-            <div class="contentBx w50">
+            <div class="contentBx">
                 <h3>"Go big or Go home"</h3>
                 <p>I am a stubborn determined developer who is strangely addicted to making code work!!!<br>
                     I resolve code problems, create smart user interface, imagine useful interaction and develop web
@@ -50,8 +52,10 @@
             </div>
             <div class="w50">
                 <img src="work.jpeg" alt="different" class="different-img">
-
             </div>
+        </div>
+        <div class="heading">
+            <a onclick="viewPdf()" class="btn" href="./CV.pdf">View My CV</a>
         </div>
     </section>
     <section class="work" id="work">
@@ -113,7 +117,6 @@
             <a href="https://github.com/Azi-khalil" class="btn">View My GitHub</a>
         </div>
     </section>
-
     <section class="contact" id="contact">
         <div class="heading">
             <h2>Testimonials</h2>
@@ -127,21 +130,122 @@
             </div>
         </div>
     </section>
+    <section class="contactme" id="contactme">
+        <div class="heading">
+            <h2>Contact me</h2>
+        </div>
+        <div class="content">
+            <div class="contactInfo white">
+                <h3>Contact Info</h3>
+                <div class="contactInfoBox">
+                    <div class="box">
+                        <div class="icon">
+                            <i class="fa fa-map-marker"></i>
+                        </div>
+                        <div class="text">
+                            <h3>Address</h3>
+                            <p>Farnham<br>Surrey<br>United Kingdom</p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="icon">
+                            <i class="fa fa-phone"></i>
+                        </div>
+                        <div class="text">
+                            <h3>Phone Number</h3>
+                            <p>+447305172995</p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="icon">
+                            <i class="fa fa-envelope-open"></i>
+                        </div>
+                        <div class="text">
+                            <h3>Email</h3>
+                            <p>aslamhanikhalil@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="formBox">
+                <div class="messageSent">Thanks for reaching out :)</div>
+                <form id="contactForm">
+                    <h3>Message me</h3>
+                    <input type="text" placeholder="Full Name" name="" id="name" required />
+                    <input type="email" placeholder="Email Address" name="" id="email" required />
+                    <textarea placeholder="Your Message" id="message" required></textarea>
+                    <input type="submit" />
+                </form>
+            </div>
+        </div>
+    </section>
 
 
-
-
-
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
     <script type="text/javascript">
         window.addEventListener('scroll',function() {
-            var header = document.querySelector('header');
+            let header = document.querySelector('header');
             header.classList.toggle('sticky',window.scrollY > 0);
         })
+        const firebaseConfig = {
+            apiKey: "AIzaSyDRWnIlLtOiNEK04xjGJFfgyyjlqBoXknQ",
+            authDomain: "my-portfolio-85947.firebaseapp.com",
+            projectId: "my-portfolio-85947",
+            storageBucket: "my-portfolio-85947.appspot.com",
+            messagingSenderId: "347557834113",
+            appId: "1:347557834113:web:578f1c3c8f2e3866d5cc80",
+            measurementId: "G-M0DGS3HQ2X"
+        };
+        const firebaseApp = firebase.initializeApp(firebaseConfig);
+        const messageRef = firebaseApp.firestore();
+        // let messageRef = firebase.database().ref('messages')
+
+        document.getElementById('contactForm').addEventListener('submit',submitForm)
+        function submitForm(e) {
+            e.preventDefault();
+
+            let name = getInputValue('name')
+            let email = getInputValue('email')
+            let message = getInputValue('message')
+
+            saveMessage(name,email,message)
+            document.querySelector('.messageSent').style.display = 'block'
+
+            setTimeout(() => {
+                document.querySelector('.messageSent').style.display = 'none'
+            },3000)
+
+            document.getElementById('contactForm').reset()
+        }
+        function getInputValue(id) {
+            return document.getElementById(id).value
+        }
+        function saveMessage(name,email,message) {
+            messageRef.collection("messages").add({
+                name: name,
+                email: email,
+                message: message
+            })
+                .then(() => {
+                    console.log("Document successfully written!");
+                })
+                .catch((error) => {
+                    console.error("Error writing document: ",error);
+                });
+        }
+
+
+
         function toggleMenu() {
-            var menu = document.querySelector('.fa-bars');
-            var btn = document.querySelector('.menu')
+            let menu = document.querySelector('.fa-bars');
+            let btn = document.querySelector('.menu')
             menu.classList.toggle('fa-times-circle')
             btn.classList.toggle('active')
+        }
+        function viewPdf() {
+            let pdf = document.querySelector('.pdf')
+            pdf.classList.toggle('pdfShow')
         }
         function goToSlack() {
             window.location.href = "https://slack-95.web.app/";

@@ -20,7 +20,7 @@ section {
   background-size: cover;
   background-position: right;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -73,6 +73,7 @@ header {
   justify-content: space-between;
   align-items: center;
   transition: 0.5s;
+  height: 75px;
 }
 
 header.sticky {
@@ -131,12 +132,26 @@ header.sticky ul li a {
   font-size: 30px;
 }
 
-.content {
+.about .content,
+.contactme .content {
   display: flex;
   justify-content: space-between;
 }
 
+.about {
+  position: relative;
+}
+
+/* .lake {
+  position: absolute;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  opacity: 0.1;
+} */
+
 .contentBx {
+  max-width: 50%;
   padding: 30px;
 }
 
@@ -146,12 +161,15 @@ header.sticky ul li a {
 }
 
 .w50 {
-  min-width: 50%;
+  max-width: 50%;
+  height: 450px;
   padding: 30px;
 }
 
 .different-img {
-  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .work {
@@ -243,6 +261,111 @@ header.sticky ul li a {
   transform: scale(1.1);
 }
 
+.pdf {
+  display: none;
+}
+
+.pdfShow {
+  position: absolute;
+  z-index: 20;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.formBox {
+  min-width: 60%;
+}
+
+.formBox form {
+  display: flex;
+  flex-direction: column;
+}
+
+.formBox form h3,
+.contactInfo h3 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.formBox form input,
+.formBox form textarea {
+  margin-bottom: 20px;
+  padding: 15px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  background-color: #222;
+  color: #fff;
+  resize: none;
+}
+
+.formBox form textarea {
+  min-height: 200px;
+}
+
+.formBox form input::placeholder,
+.formBox form textarea::placeholder {
+  color: #999;
+}
+
+.formBox form input[type="submit"] {
+  max-width: 100px;
+  background-color: #2196f3;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.contactInfo {
+  min-width: 40%;
+}
+
+.contactInfoBox {
+  position: relative;
+}
+
+.contactInfoBox .box {
+  position: relative;
+  padding: 20px 0px;
+  display: flex;
+  align-items: baseline;
+}
+
+.contactInfoBox .box .icon {
+  min-width: 40px;
+  padding-top: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+
+.contactInfoBox .box .text {
+  min-width: 40px;
+  display: flex;
+  margin-left: 20px;
+  font-size: 16px;
+  flex-direction: column;
+  font-weight: 300;
+}
+
+.contactInfoBox .box .text h3 {
+  margin-bottom: 0;
+  color: #2196f3;
+  font-weight: 500;
+}
+
+.messageSent {
+  text-align: center;
+  background-color: #79c879;
+  padding: 10px;
+  color: #fff;
+  margin-bottom: 10px;
+  display: none;
+}
+
 /*Responsive*/
 
 @media (max-width: 900px) {
@@ -327,10 +450,12 @@ header.sticky ul li a {
   }
 
   .content {
+    align-items: center;
     flex-direction: column;
   }
 
   .w50 {
+    max-width: 100%;
     margin-bottom: 20px;
   }
 
@@ -338,6 +463,24 @@ header.sticky ul li a {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .contentBx {
+    max-width: 100%;
+  }
+
+  .contentBx p,
+  .contentBx h3 {
+    text-align: center;
+  }
+
+  .contactInfo {
+    width: 100%;
+  }
+
+  .formBox {
+    width: 100%;
+    margin-top: 40px;
   }
 }
 
@@ -359,12 +502,17 @@ header.sticky ul li a {
   .face-img {
     max-width: 200px;
   }
+
+  header .logo {
+    font-size: 15px;
+  }
+
 }
 
 @media (max-width: 400px) {
   .banner {
     flex-direction: column-reverse;
-    justify-content: space-around;
+    gap: 20px;
   }
 
   .textBx {
@@ -375,15 +523,6 @@ header.sticky ul li a {
 
   header {
     padding: 20px 15px;
-  }
-
-  header .logo {
-    font-size: 15px;
-  }
-
-  .contentBx p,
-  h3 {
-    text-align: center;
   }
 
   .contact .testContent {
