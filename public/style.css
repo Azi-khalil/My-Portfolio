@@ -132,8 +132,12 @@ header.sticky ul li a {
   font-size: 30px;
 }
 
-.about .content,
 .contactme .content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about .content {
   display: flex;
   justify-content: space-between;
 }
@@ -193,6 +197,7 @@ header.sticky ul li a {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
 }
 
 .work .content .workBx img {
@@ -247,6 +252,7 @@ header.sticky ul li a {
   position: relative;
   width: 300px;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .contact .testContent .bxImg img {

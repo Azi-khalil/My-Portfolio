@@ -64,8 +64,8 @@
             <p> These are some of the projects I have worked on using Javascript and React.</p>
         </div>
         <div class="content">
-            <div class="workBx" onclick="goToDo()">
-                <img src="./to-do.png" alt="myface">
+            <a href="https://todo-app-1cc02.web.app/" class="workBx">
+                <img src="./to-do.png" alt="todoapp">
                 <div class="details">
                     <div class="content">
                         <h4>My To-Do App</h4>
@@ -73,8 +73,8 @@
                     </div>
 
                 </div>
-            </div>
-            <div class="workBx" onclick="goToSlack()">
+            </a>
+            <a href="https://slack-95.web.app/" class="workBx">
                 <img src="./validation.png" alt="myface">
                 <div class="details">
                     <div class="content">
@@ -82,9 +82,9 @@
                         <p>This a live Realtime clone of the slack app which I built using React and Firebase </p>
                     </div>
                 </div>
-            </div>
-            <div class="workBx" onclick="goToAmazon()">
-                <img src="./my-app.png" alt="myface">
+            </a>
+            <a href="https://anteeqa-e8c7d.web.app/" class="workBx">
+                <img src="./my-app.png" alt="amazonclone">
                 <div class="details">
                     <div class="content">
                         <h4>Amazon Clone</h4>
@@ -92,8 +92,8 @@
                             processing and firebase for storage</p>
                     </div>
                 </div>
-            </div>
-            <div class="workBx" onclick="goToCrypto()">
+            </a>
+            <a href="https://crypto-tracker-1b2b4.web.app/" class="workBx">
                 <img src="./crypto.png" alt="myface">
                 <div class="details">
                     <div class="content">
@@ -101,7 +101,7 @@
                         <p>This project uses React, React Hooks and Axios to fetch crypto currency data from an API</p>
                     </div>
                 </div>
-            </div>
+            </a>
             <div class="workBx" onclick="goToMovies()">
                 <img src="./movies.png" alt="myface">
                 <div class="details">
@@ -112,6 +112,17 @@
                     </div>
                 </div>
             </div>
+            <a href="https://aslam-pokedex.netlify.app/" class="workBx" onclick="goToPokedex()">
+                <img src="./pokedex.png" alt="pokedex">
+                <div class="details">
+                    <div class="content">
+                        <h4>Pokedex App</h4>
+                        <p>This App lets you search for any Pokemon, you can also filter Pokemons according to their
+                            types and
+                            discover their abilities.</p>
+                    </div>
+                </div>
+            </a>
         </div>
         <div class="heading">
             <a href="https://github.com/Azi-khalil" class="btn">View My GitHub</a>
@@ -122,12 +133,12 @@
             <h2>Testimonials</h2>
         </div>
         <div class="testContent">
-            <div class="bxImg">
+            <a href="https://www.linkedin.com/in/johannesvanwijk/" class="bxImg">
                 <img src="./jonny.png" onclick="goToJonny()">
-            </div>
-            <div class="bxImg" onclick="goToVero()">
+            </a>
+            <a href="https://www.linkedin.com/in/veronikaparakova/" class="bxImg" onclick="goToVero()">
                 <img src="./vero.png">
-            </div>
+            </a>
         </div>
     </section>
     <section class="contactme" id="contactme">
@@ -234,9 +245,6 @@
                     console.error("Error writing document: ",error);
                 });
         }
-
-
-
         function toggleMenu() {
             let menu = document.querySelector('.fa-bars');
             let btn = document.querySelector('.menu')
@@ -246,27 +254,6 @@
         function viewPdf() {
             let pdf = document.querySelector('.pdf')
             pdf.classList.toggle('pdfShow')
-        }
-        function goToSlack() {
-            window.location.href = "https://slack-95.web.app/";
-        }
-        function goToDo() {
-            window.location.href = "https://todo-app-1cc02.web.app/";
-        }
-        function goToCrypto() {
-            window.location.href = "https://crypto-tracker-1b2b4.web.app/";
-        }
-        function goToAmazon() {
-            window.location.href = "https://anteeqa-e8c7d.web.app/";
-        }
-        function goToVero() {
-            window.location.href = "https://www.linkedin.com/in/veronikaparakova/";
-        }
-        function goToJonny() {
-            window.location.href = "https://www.linkedin.com/in/johannesvanwijk/";
-        }
-        function goToMovies() {
-            window.location.href = "https://movie-search-engine-fa560.web.app/discover";
         }
     </script>
 
